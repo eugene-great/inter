@@ -5,7 +5,8 @@
     <TextLine v-for="(line, index) in answer" :text="line" :key="index + line.length" />
   </div>
 
-  <button @click="next" type="button" class="btn btn-primary">Next</button>
+  <button @click="next" type="button" class="btn btn-lg btn-primary">Next</button>
+
 </template>
 
 <script>
@@ -14,7 +15,7 @@ import TextLine from "@/components/TextLine";
 import dataMixin from '@/mixins/data'
 
 export default {
-  name: 'QuestionsView',
+  name: 'PracticeView',
   mixins: [dataMixin],
   components: {TextLine},
   data() {

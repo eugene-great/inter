@@ -1,18 +1,22 @@
 <template>
   <div class="container py-4">
+
     <nav class="nav nav-pills nav-fill">
-      <router-link class="nav-link btn btn-primary" to="/question">Question
-        <span class="badge bg-secondary">{{questionsCount}}</span></router-link> |
+      <router-link class="nav-link btn btn-primary" to="/">Practice
+        <span class="badge bg-secondary">{{questionsCount}}</span></router-link>
       <router-link class="nav-link" to="/import">Import CSV</router-link>
     </nav>
 
     <router-view />
+
   </div>
 </template>
 
 <script>
 
 import dataMixin from '@/mixins/data'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.js'
 
 export default {
   mixins: [dataMixin]

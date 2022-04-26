@@ -49,11 +49,10 @@ export default {
             }
             return arr;
         },
-
-        importCSV() {
+        importCSV(replace = true) {
 
             const input = this.parseCSV(this.inputCSV);
-            let questions = {};
+            let questions = replace ? {} : this.getQuestions();
 
             for (let i = 0; i < input.length; i++) {
                 for (let j = 0; j < input[0].length; j++) {
@@ -65,7 +64,9 @@ export default {
                 }
             }
 
+            this.inputCSV = ''
             localStorage.setItem(this.key, JSON.stringify(questions));
+            this.$router.push('/question');
         },
         getQuestions() {
             return JSON.parse(localStorage.getItem(this.key)) || [];
